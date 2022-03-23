@@ -106,7 +106,7 @@ function prevPokemon(){
 
 function Search(){
     let pokemonToSearch = document.getElementById('searchInput').value;
-    fetchPokemon(pokemonToSearch);
+    fetchPokemon(pokemonToSearch.toLowerCase());
     
 }
 
