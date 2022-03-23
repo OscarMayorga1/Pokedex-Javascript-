@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Pokedex</title>
+</head>
+<body>
+    <section class="navbar">
+        <nav>
+            <div class="logo">
+                <img src="./images/pokemon-logo.png" alt="pokemon-logo">
+            </div>
+            <div>
+                <button class="on"onclick="startPokedex();">ON</button>
+            </div>
+        </nav>
+    </section>
+    <section class="content">
+
+        <div class="pokedex-space">
+            <div class="pokedex-closed">
+
+            </div>
+
+            <div class="pokedex-screen1">
+                <div class="pokedex-round-border">
+                    <div class="pokedex-screen1-left">
+                        <div class="buttons">
+                            <div>
+                                <button></button>
+                                <button></button>
+                                <button></button>
+                                <button></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pokedex-screen">
+                    <div class="pokedex-screen-background">
+                        <div class="screen" id = "screen1">
+                            <div class="screen1-content" id="screen1Content">
+                                <div class="variable" id="variable-search">
+                                    <input type="search" class="search-input" id="searchInput" placeholder="Name/Number">
+                                    <button class="return-button" onclick="Search();">Search</button>
+                                </div>
+
+                                <div class="variable-team" id="variableTeam">
+                                    <button><img src="" alt="p1" id="team1" onclick="fetchPokemon(team[0])"></button>
+                                    <button><img src="" alt="p2" id="team2" onclick="fetchPokemon(team[1])"></button>
+                                    <button><img src="" alt="p3" id="team3" onclick="fetchPokemon(team[2])"></button>
+                                    <button><img src="" alt="p4" id="team4" onclick="fetchPokemon(team[3])"></button>
+                                    <button><img src="" alt="p5" id="team5" onclick="fetchPokemon(team[4])"></button>
+                                    <button><img src="" alt="p6" id="team6" onclick="fetchPokemon(team[5])"></button>
+                                </div>
+
+                                <div class="pokemon-sprite1" >
+                                    <img src="" alt="pokemon-sprite1" id="sprite1">
+                                </div>
+                                <div class="pokemon-info1" id="info">
+                                    <h2 id="name">BULBASAUR</h2>
+                                    <div>
+                                        <h3 id="type">Type Plant</h3>
+                                    </div>
+                                    <div>
+                                        <h3 id = "number">No. 123</h3>
+                                    </div>
+                                    
+                                    <div>
+                                        <h3 id = "height">height:</h3>
+                                        <h3 id = "weight">weight:</h3>
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="pokedex-hinge">
+                <div class="pokedex-hinge-left"></div>
+                <div class="pokedex-hinge-separator"></div>
+                <div class="pokedex-hinge-light">
+                    <div class="on-light"></div>
+                </div>
+                <div class="pokedex-hinge-separator"></div>
+                <div class="pokedex-hinge-right"></div>
+            </div>
+            <div class="pokedex-screen2">
+                <div class="pokedex-round-border">
+                    <div class="pokedex-screen2-left">
+                        <div class="buttons">
+                            <div>
+                                <button onclick="prevPokemon();"></button>
+                                <button onclick="prevPokemon();"></button>
+                                <button onclick="nextPokemon();"></button>
+                                <button onclick="nextPokemon();"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pokedex-screen">
+                    <div class="pokedex-screen-background">
+                        <div class="screen" id="screen2">
+                            <div class="menu" id = "menuId">
+                                <button class="menu-button search" onclick="searchPokemon();">Search Pokemon</button>
+                                <button class="menu-button list" onclick="pokemonList();">Pokemon list</button>
+                                <button class="menu-button team" onclick="randomTeamGenerator();">Random team</button>
+                                <button class="menu-button exit" onclick="exitGame();">Exit</button>
+                            </div>
+                            <div class="Pokemon-info" id = "pokemonInfo">
+                                <div class="pokemon-sprite1">
+                                    <img src="" alt="pokemon-sprite2" id="sprite2">
+                                </div>
+                                <div>
+                                    <button class="return-button" onclick="returnMenu();">Menu</button>
+                                </div>
+                                <div class="stats">
+                                    <table>
+                                        <tr>
+                                            <th>PS</th>
+                                            <th>ATK</th>
+                                            <th>DEF</th>
+                                        </tr>
+                                        <tr>
+                                            <td id="ps">0</td>
+                                            <td id="atk">0</td>
+                                            <td id="def">0</td>
+                                        </tr>
+                                    </table>
+
+                                    <table>
+                                        <tr>
+                                            <th >SP.ATK</th>
+                                            <th >SP.DEF</th>
+                                            <th>SPEED</th>
+                                        </tr>
+                                        <tr>
+                                            <td id="spatk">0</td>
+                                            <td id="spdef">0</td>
+                                            <td id="speed">0</td>
+                                        </tr>
+                                    </table>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <section class="footer-c">
+        <footer>
+
+        </footer>
+    </section>
+</body>
+<footer>
+    <script src="app.js"></script>
+</footer>
+</html>
